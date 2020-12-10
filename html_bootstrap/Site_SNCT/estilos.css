@@ -1,0 +1,44 @@
+.opc {
+  background: rgba(0, 0, 0, 0.53) ;
+}
+.opc2 {
+  background: rgba(221, 221, 221, 0.53) ;
+}
+
+.cgreen {
+  background: rgb(12, 165, 52) ;
+}
+.banner{
+    margin-top: 100px;
+}
+.mg{
+    margin-bottom: -150px;
+}
+.fonte{
+    color: green;
+}
+.ti{
+    width: 500px;
+    margin: auto;
+}
+.t2{
+    width: 300px;
+    margin: auto;
+}
+.fnt{
+
+
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.pdd{
+    margin-top:110px;
+        }
+.mg{
+     margin: 10px, 10px, 10px, 10px;
+         }
+.b{
+    font-weight: bold;    
+}

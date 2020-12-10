@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+		<title> Cadastro </title>
+        <meta charset="utf-8">  
+        <script type="text/javascript" >
+            
+            function Alerta(){
+    alert ("CADASTRO REALIZADO COM SUCESSO");
+}
+    
+    function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('rua').value=("");
+            document.getElementById('bairro').value=("");
+            document.getElementById('cidade').value=("");
+            document.getElementById('uf').value=("");
+    }
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('rua').value=(conteudo.logradouro);
+            document.getElementById('bairro').value=(conteudo.bairro);
+            document.getElementById('cidade').value=(conteudo.localidade);
+            document.getElementById('uf').value=(conteudo.uf);
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+    function pesquisacep(valor) {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('rua').value="...";
+                document.getElementById('bairro').value="...";
+                document.getElementById('cidade').value="...";
+                document.getElementById('uf').value="...";
+
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    };
+
+    </script>
+        
+         <link rel="stylesheet" href="estilos.css" >
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+
+         
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" >
+    </head>
+	<body>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light p-3 mb-2 cgreen text-white">
+            <div class="container">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="imagens/logo-cabecalho-1024x342.png" width="150">
+                    </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fnt" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fnt" href="oqe.html">Sobre o evento</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="fnt nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"> Programação</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="programacao.html">Geral</a>
+                                <a class="dropdown-item" href="programacao.html#15">Dia 15/10</a>
+                                <a class="dropdown-item" href="programacao.html#16">Dia 16/10</a>
+                                <a class="dropdown-item" href="programacao.html#17">Dia 17/10</a>
+                                <a class="dropdown-item" href="programacao.html#18">Dia 18/10</a>
+                                <a class="dropdown-item" href="programacao.html#19">Dia 19/10</a>
+                            </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class=" fnt nav-link" href="cadastro.html">Cadastro</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="fnt nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Social</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://www.facebook.com/ifsantacatarina/" target="_blank">Facebook</a>
+                                <a class="dropdown-item" href="https://twitter.com/ifsc" target="_blank">Twitter</a>
+                                <a class="dropdown-item" href="https://www.instagram.com/ifsc/" target="_blank">Instagram</a>
+                                <a class="dropdown-item" href="https://www.ifsc.edu.br/" target="_blank">Pagina oficial</a>
+                            </div>
+                    </li>
+                </ul>
+                 
+                <span class="float-right">
+                <ul class=" navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2 " type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                        <button class="btn btn-outline-success my-2 my-sm-0 " type="submit"> <img src="imagens/lupa.png" width="20" height="20" alt="snct"> </button>
+                    </form>
+                </li>
+                </ul>
+                </span>
+                </div>
+        </div>
+        </nav> 
+        <br><br>
+
+        <h2 class="text-center mt-5"> Formulário de cadastro </h2><br><br>
+        
+<div class="container opc2">
+		<div class="row">
+			<div class="col-lg-12 col-md-12  mb-4">
+                
+				<h4 class="pt-4">Cadastre-se:</h4>
+                
+                <form action="funcoes.php?funcao=gravar" method="POST">
+                <div class="form-group">
+						<label class="pt-4" for="nome">Nome:</label>
+						<input type="text" name="nome" id="nome" class="form-control" required="">
+						<label class="pt-4" for="mat">Matrícula:</label>
+						<input type="text" name="matricula" id="matricula" class="form-control">
+						<label class="pt-4" for="data">Data de Nascimento:</label>
+						<input type="date" name="datanascimento" id="data" class="form-control" required="">
+						<label class="pt-4" for="cpf">CPF:</label>
+						<input type="number" name="cpf" id="cpf" class="form-control">
+						<label class="pt-4" for="rg">RG:</label>
+						<input type="number" name="rg" id="rg" class="form-control">
+						<label class="pt-4" for="email">E-mail:</label>
+						<input type="email" name="email" id="email" class="form-control" required="">
+						<label class="pt-4" for="tel">Telefone:</label>
+						<input type="number" name="telefone" id="telefone" class="form-control"><br>
+                        <label class="pt-4" for="tipo">Tipo de participante:</label><br>
+                    <input type="radio" name="tipoparticipante" value="Servidor" required=""> Servidor <br> 
+                    <input type="radio" name="tipoparticipante" value="Aluno"> Aluno <br>
+                    <input type="radio" name="tipoparticipante" value="Comunidade Externa">  Comunidade externa
+                </div>
+
+                 <hr>
+                    
+                <div class="form-group">    
+                    <label class="pt-4" for="cep">Cep:</label>
+                    <input name="cep" type="text" id="cep" class="form-control" value="" size="10" maxlength="9"
+               onblur="pesquisacep(this.value);" />
+                    <label class="pt-4" for="num">Numero:</label>
+                    <input name="numero" type="number" id="num" class="form-control" size="60" />
+                    <label class="pt-4" for="rua">Rua:</label>
+                    <input name="rua" type="text" id="rua" class="form-control" size="60" />
+                    <label class="pt-4" for="bairro">Bairro:</label>
+                    <input name="bairro" type="text" id="bairro" class="form-control" size="40" />
+                    <label class="pt-4" for="cidade">Cidade:</label>
+                    <input name="cidade" type="text" id="cidade" class="form-control" size="40" />
+                    <label class="pt-4" for="uf">Estado:</label>
+                    <input name="uf" type="text" id="uf" class="mb-4 form-control" size="2" />
+                </div>
+					
+					<button type="submit" class="btn btn-success" onclick="Alerta()" >Cadastrar</button>
+ 
+				</form>
+			</div>
+		</div>
+	</div>
+        
+        <div class="mg cgreen mt-4">
+            <div class="container">
+                <div class="pt-4 pb-4">
+                <h5 class="text-center">Instituto Federal de Santa Catarina IFSC - Câmpus Lages </h5>
+                <p class="text-center">Rua Heitor Vila Lobos, 222 - Bairro São Francisco - CEP 88506-400 <br> Fone: (49) 3221-4200</p>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
+        
+
+

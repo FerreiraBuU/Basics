@@ -1,0 +1,73 @@
+<script>
+    
+    var PCtij = Number (prompt("qual o preço do tijolo"));
+  
+    var PCcim = Number (prompt("qual o preço do cimento"));
+    
+    var PCcal = Number (prompt("qual o preço do saco de cal"));
+   
+    var PCare = Number (prompt("qual o preço do m³ da areia"));
+   
+    var PCped = Number (prompt("qual o preço da hora do pedreiro"));
+        
+    var PCser = Number (prompt("qual o preço da hora do servente"));
+    
+    var QTpar = Number (prompt("quantas paredes serão construidas"));
+    
+    var TAMpar = Number (prompt("qual o tamanho da parede"));
+
+    
+    var QTtij = (QTpar * TAMpar) * 30;
+    alert("Quantos tijolos serão gastos: " + QTtij + " tijolos");
+    
+    var PCtijtotal = QTtij * PCtij;
+    alert("Quantos reais serão gastos para comprar os tijolos: " + PCtijtotal + " reais");
+    
+    var QTare = (QTpar * TAMpar) * 0.02;
+    alert("Quantos m3 de areia serão gastos: " + QTare + "m³");
+    
+    var PCaretotal = QTare * PCare;
+    alert("Quantos reais serão gastos para comprar a areia: " + PCaretotal + " reais");
+    
+    var QTcim = (QTpar * TAMpar) * 0.09;
+    alert("Quantos sacos de cimento serão gastos: " + QTcim + " sacos");
+    
+    var PCcimtotal = QTcim * PCcim;
+    alert("Quantos reais serão gastos para comprar o cimento: " + PCcimtotal + " reais");
+    
+    var QTcal = (QTpar * TAMpar) * 0.18;
+    alert("Quantos sacos de cal serão gastos: " + QTcal + " sacos");
+    
+    var PCcaltotal = QTcal * PCcal;
+    alert("Quantos reais serão gastos para comprar o cimento: " + PCcaltotal + " reais");
+    
+    var HRped = (QTpar * TAMpar) * 1;
+    alert("Quantas horas serão trabalhadas pelo pedreiro: " + HRped + " horas");
+    
+    var PCpedtotal = HRped * PCped;
+    alert("Quantos reais serão pagos ao pedreiro: " + PCpedtotal + " reais");
+    
+    var HRser = (QTpar * TAMpar) * 1;
+    alert("Quantas horas serão trabalhadas pelo servente: " + HRser + " horas");
+    
+    var PCsertotal = HRser * PCser;
+    alert("Quantos reais serão pagos ao servente: " + PCsertotal + " reais");
+    
+    var PCtotalmat = PCtijtotal + PCaretotal + PCcimtotal + PCcaltotal;
+    alert("Valor total do material: " + PCtotalmat + " reais");
+    
+    var PCtotalmao = PCpedtotal + PCsertotal;
+    alert("Valor total da mão-de-obra: " + PCtotalmao + " reais");
+    
+    var PCtotalobra = PCtotalmat + PCtotalmao;
+    alert("Valor total da obra: " + PCtotalobra + " reais");
+    
+    var PCm2 =  PCtotalobra / (QTpar * TAMpar); 
+    alert("Valor por m²: " + PCm2 + " reais");
+    
+    
+    
+    
+
+    
+    </script>
