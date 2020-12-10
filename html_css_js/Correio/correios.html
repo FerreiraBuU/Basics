@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang=”pt-br”>
+    <head>
+		<title> Correios </title>
+        <meta charset="utf-8">
+        </head>
+	<body>
+        
+        <h1> Correios - Envio de Mercadoria </h1>        
+        <p>
+            
+        Nome do remetente: <br> <input type="text" id="NR"> <br>
+        Nome do destinatário: <br> <input type="text" id="ND"> <br>
+        Endereço do destinatário: <br> <input type="text" id="END"> <br>
+        Peso da mercadoria (g): <br> <input type="number" id="PESO"> <br><br>
+
+            Forma de envio: 
+            <input type="radio" name="pago" id="Normal"> Normal  
+            <input type="radio" name="pago" id="Sedex"> Sedex 
+            <input type="radio" name="pago" id="Sedex10"> Sedex10 <br><br>
+            <input type="checkbox" id="registro"> Registro de Recebimento <br><br>
+ 
+            
+             Estado de destino: <br>
+            <select id="estado">
+                <option value="SC"> Santa Catarina </option>
+                <option value="RS"> Rio Grande de Sul </option>
+                <option value="PR"> Paraná </option>
+                <option value="SP"> São Paulo </option>
+                <option value="RJ"> Rio de Janeiro </option>
+                <option value="MG"> Minas Gerais </option>
+                <option value="ES"> Espirito Santo </option>
+                <option value="CO"> Centro-Oeste </option>
+                <option value="NO"> Nordeste </option>
+                <option value="NT"> Norte </option>
+            </select><br>
+            
+            
+          <br><input type="button" value="Calcular" id="botao1"><br>
+            
+            
+            
+             
+        </p>
+        <p id="page"> </p>
+
+    
+        
+
+        
+        <script src="correios.js"></script>  
+    </body>
+</html>
