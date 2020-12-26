@@ -1,59 +1,88 @@
+body{
+    background-color: #9c9c9c;
+}
+header > h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(22, 22, 22);
+    text-align: center;
+    padding: 30px;
+}
 
-	
+main{
+    max-width: 70%;
+    background-color: rgb(219, 219, 219);
+    margin: auto;
+    padding-bottom: 20px;
+    border-radius: 50px;
+
+}
+main > h2{
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 20px;
+}
+
 .menu{
-    width: 800px;
-    padding: 10px;
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 500px;
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 20px;
 }
 
-img{
-    display: block;
-    height: 150PX;
-    margin-left: auto;
-    margin-right: auto;
+.menu > div{
+    max-width: 90%;
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #9c9c9c;
+    border-radius: 15px;
+}
+.menu > div > a > img{
+    max-width: 100%;
+    margin: auto;
+    border-radius: 15px;
 }
 
-h1,h2{
-    font-family: "Times New Roman", Times, serif;
-    margin: 25px;
+.menu > div > p{
     text-align: center;
-    
+}
+/* -----cardapio */
+
+.cardapio{
+    max-width: 90%;
+    margin: auto;
+    padding: 20px 0 10px;
 }
 
-td{
-    font-family: sans-serif;
-    font-size: 12px;
-    text-align-last: center;
-    
-}
-p{
-    font-family: "Arial", sans-serif;
-    font-size: 12px;
-    
+.cardapio > table{
+    max-width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+
 }
 
-.linha{
-    padding: 12px;
-    border-bottom:2px solid #898989;
-}
-
-h1{
-    text-align: center
-}
-
-.back{
-    background-color: #e0dbdb;
-}
 th{
-    border-bottom: 2px solid black;
-
+    padding: 10px 10px 10px;
+}
+td{
+    padding: 5px;
+    cursor: pointer;
+    border-left: gray 1px solid;
+    border-right: gray 1px solid;
+}
+td > img{
+    width: 80%;
 }
 
-.center{
-    display: block;
-    text-align: center;
+tbody > tr:nth-child(2n+1){
+    background-color: #9c9c9c;
 }
-
-.parag{
-    margin-left: 30px;
+tbody > tr:hover{
+    background-color: #79748f;
 }

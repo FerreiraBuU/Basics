@@ -6,36 +6,50 @@
         <link rel="stylesheet" type="text/css" href="CAFE.css">
     </head>
 	<body>
-        
-        <table>
-            <tr class="back">
-                <th>Receita</th>
-                <th>Descrição</th>
-                <th>Preço</th>
-            </tr>
-            <tr>
-                <td>Mistura de Casa </td>
-                <td>Expresso, leite fervido e xarope de chocolate. </td>
-                <td>R$ 2,35 </td>
-            </tr>
-            <tr class="back">
-                <td>Café arábico com leite </td>
-                <td>Uma mistura de expresso, leite fervido e espuma. </td>
-                <td>R$ 1,89 </td>
-            </tr>
-            <tr>
-                <td>Capuccino </td>
-                <td>Uma bebida condimentada com cha preto, especiarias, leite e mel </td>
-                <td>R$ 1,85 </td>
-            </tr>
-            <tr class="back">
-                <td>Cha Chai </td>
-                <td>Uma mistura suave e delicada de cafés do México, Bolivia e Guatemala. </td>
-                <td>R$ 2,35 </td>
-            </tr>
-            
-        </table>
-         
+        <header>
+            <h1>Café Starbuzz</h1>    
+        </header>
+        <main>
+            <div class="cardapio">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Receita</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="location.href = 'mistura.html';">
+                            <td><img src="img/iconecompra.png" alt=""></td>
+                            <td>Mistura de Casa </a></td>
+                            <td>Expresso, leite fervido e xarope de chocolate.</a> </td>
+                            <td>R$ 2,35 </a></td>
+                        </tr>
+                        <tr onclick="location.href = 'cafe.html';">
+                            <td><img src="img/iconecompra.png" alt=""></td>
+                            <td>Café arábico com leite </td>
+                            <td>Uma mistura de expresso, leite fervido e espuma. </td>
+                            <td>R$ 1,89 </td>
+                        </a>
+                        </tr>
+                        <tr onclick="location.href = 'cappucino.html';">
+                            <td><img src="img/iconecompra.png" alt=""></td>
+                            <td>Capuccino </td>
+                            <td>Uma mistura suave e delicada de cafés do México, Bolivia e Guatemala. </td>
+                            <td>R$ 1,85 </td>
+                        </tr>
+                        <tr onclick="location.href = 'chachai.html';">
+                            <td><img src="img/iconecompra.png" alt=""></td>
+                            <td>Cha Chai </td>
+                            <td>Uma bebida condimentada com cha preto, especiarias, leite e mel </td>
+                            <td>R$ 2,35 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
     </body>
 </html>
 
