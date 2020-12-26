@@ -21,6 +21,7 @@ main > h2{
     text-align: center;
     font-size: 1.5rem;
     padding: 20px;
+    font-weight: bold;
 }
 
 .menu{
@@ -69,15 +70,19 @@ main > h2{
 
 th{
     padding: 10px 10px 10px;
+    font-weight: bold;
 }
 td{
     padding: 5px;
+    height: 30px;
     cursor: pointer;
-    border-left: gray 1px solid;
-    border-right: gray 1px solid;
+    border-left: 1px solid gray ;
+    border-right:  1px solid gray;
+    vertical-align: middle;
+
 }
 td > img{
-    width: 80%;
+    width: 20px;
 }
 
 tbody > tr:nth-child(2n+1){
@@ -85,4 +90,40 @@ tbody > tr:nth-child(2n+1){
 }
 tbody > tr:hover{
     background-color: #79748f;
+}
+/* ----------------------- */
+
+.flex{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.flex > div{
+    max-width: 100%;
+    padding: 0 20px 10px;
+}
+
+.flex > div > h3{
+    text-align: initial;
+    font-size: 1.2rem;
+    padding: 10px;
+    font-weight: bold;
+}
+.flex > div > p{
+    text-align: initial;  
+}
+
+.retorno > a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:rgb(22, 22, 22);
+}
+
+.retorno > a > img{
+    margin: 0 5px;
+}
+
+.sep{
+    margin: 30px;
 }
