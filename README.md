@@ -1,3 +1,7 @@
+
+
+<div align="center"> 17 <img width="420" src="https://github-readme-stats.vercel.app/api?username=buuelseif&show_icons=true&theme=blueberry&count_private=true"> 18 <img width="270" align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=buuelseif&theme=blueberry">
+
 # Basics
 # Repositório de estudos!
 
@@ -6,6 +10,3 @@
 
 
 # Não existe aprendizado sem afeto!
-
-
-<div align="center"> 17 <img width="420" src="https://github-readme-stats.vercel.app/api?username=buuelseif&show_icons=true&theme=blueberry&count_private=true"> 18 <img width="270" align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=buuelseif&theme=blueberry">
